@@ -11,7 +11,7 @@ require('dotenv').config();
  * See https://playwright.dev/docs/test-configuration.
  */
 export default defineConfig({
-  testDir: './tests',
+  testDir: './tests-examples',
 
   /* Run tests in files in parallel */
   fullyParallel: true,
@@ -27,7 +27,7 @@ export default defineConfig({
   workers: process.env.CI ? 1 : undefined,
 
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
-  reporter: 'html',
+  reporter: [['html', { open: 'always' }]],
 
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
@@ -42,14 +42,14 @@ export default defineConfig({
     // video: 'on-first-retry'
   },
 
-  timeout: 30000, //https://playwright.dev/docs/test-timeouts
-  expect: {
-    /**
-     * Maximum time expect() should wait for the condition to be met.
-     * For example in `await expect(locator).toHaveText();`
-     */
-    timeout: 10000
-  },
+  // timeout: 30000, //https://playwright.dev/docs/test-timeouts
+  // expect: {
+  //   /**
+  //    * Maximum time expect() should wait for the condition to be met.
+  //    * For example in `await expect(locator).toHaveText();`
+  //    */
+  //   timeout: 10000
+  // },
 
   /* Configure projects for major browsers */
   projects: [
