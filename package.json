@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test:e2e": "npx playwright test tests/",
-    "test:e2e:smoke": "npx playwright test tests-examples/ --grep @smoke --project=chromium",
-    "test:e2e:non-smoke": "npx playwright test tests-examples/ --grep-invert @smoke --project=firefox"
+    "test:e2e:smoke": "npx playwright test tests/ --grep @smoke --project=chromium",
+    "test:e2e:non-smoke": "npx playwright test tests/ --grep-invert @smoke --project=firefox"
   },
   "keywords": [],
   "author": "",
